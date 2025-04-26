@@ -21,28 +21,28 @@ const {
   showAllCategory,
   createCategory,
   categoryPageDetails,
-} = require("../controllers/Category")
+} = require("../Controllers/Category")
 
 // Sections Controllers Import
 const {
   createSection,
   updateSection,
   deleteSection,
-} = require("../controllers/Section")
+} = require("../Controllers/Section")
 
 // Sub-Sections Controllers Import
 const {
   createSubSection,
   updateSubSection,
   deleteSubSection,
-} = require("../controllers/Subsection")
+} = require("../Controllers/Subsection")
 
 // Rating Controllers Import
 const {
   createRatingAndReview,
   averageRatingAndReview,
   getAllRating,
-} = require("../controllers/RatingAndReview")
+} = require("../Controllers/RatingAndReview")
 
 // CourseProgress Controllers Import
 const {
