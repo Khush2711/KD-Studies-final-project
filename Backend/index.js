@@ -23,12 +23,22 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS;
+
 app.use(
-    cors({
-        origin: "http://localhost:3000",
-        credentials: true
-    })
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true); // Allow the request
+      } else {
+        callback(new Error("CORS policy: Origin not allowed"), false); // Deny the request
+      }
+    },
+    credentials: true,
+  })
 );
+
 app.use(
     fileUpload({
         useTempFiles: true,
